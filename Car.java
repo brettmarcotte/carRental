@@ -1,22 +1,28 @@
 package com.company;
 
 public class Car {
-   public String make;
-   public String model;
-   public boolean isRented;
+    public String make;
+    public String model;
+    public boolean isRented;
 
-   public void Car(String make, String model, boolean isRented){
-       this.make = make;
-       this.model =  model;
-       this.isRented = isRented;
-   }
+    public void Car(String make, String model) {
+        this.make = make;
+        this.model = model;
+        this.isRented = false;
 
-    @Override
-    public String toString() {
-        return "Car{" +
-                "make='" + make + '\'' +
-                ", model='" + model + '\'' +
-                ", isRented=" + isRented +
-                '}';
     }
+    
+    public String getMake() {
+        return make;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public boolean setIsRented(boolean isRented) {
+        return isRented;
+    }
+
 }
+
