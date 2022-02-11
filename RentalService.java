@@ -1,9 +1,36 @@
 package com.company;
 
+import java.util.ArrayList;
+
 public class RentalService {
 
+    private static ArrayList<Car> carStorage;
+
     public static void main(String[] args){
+
+//        initializeCarStorage();
+
+
         System.out.println("Welcome to the Car Rental CLI");
+
+
+    private static void rentalMenu() {
+            System.out.println("\nRENTAL MENU\n");
+            int listNumber = 1;
+            for (int i = 0; i < carStorage.size() ; i++) {
+                if( !carStorage.get(i).isRented() ) {
+                    System.out.println(listNumber + ")" + carStorage.getName());
+                    listNumber++;
+                }
+            }
+            int userSelection = UI.readInt("Enter a number to select the car you'd like to rent", 1, listNumber - 1);
+            System.out.println(carStorage.get(userSelection - 1).getName());
+        }
+
+    }
+
+    private static void intializeCarStorage(){
+
 
         Car[] carStorage = new Car[3];
 
@@ -18,14 +45,10 @@ public class RentalService {
 
         for (int i = 0; i < carStorage.length; i++) {
             if(!carStorage[i].isRented())
-            System.out.println( "{" + (i + 1) + ")" + carStorage[i].getMake() );
+                System.out.println( "{" + (i + 1) + ")" + carStorage[i].getMake() );
 
         }
-
-
-
     }
-
 
 
 
