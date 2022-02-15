@@ -22,7 +22,11 @@ public class Car {
 
     public boolean isRented() {
         return isRented;
-
     }
+
+    public String toString(){
+        return  make + " " + model;
+    }
+
 }
 
